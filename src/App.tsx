@@ -1,9 +1,13 @@
+import { SnackbarProvider } from "./contexts/useSnackbar"
 import ThemeProvider from "./shared/theme/ThemeProvider"
 
 const App = () => {
+
     return (
         <ThemeProvider>
-            <div>App</div>
+            <SnackbarProvider>
+                <div>App</div>
+            </SnackbarProvider>
         </ThemeProvider>
     )
 }
