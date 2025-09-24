@@ -1,14 +1,18 @@
+import { BrowserRouter } from "react-router-dom"
 import { SnackbarProvider } from "./contexts/useSnackbar"
+import AppRouter from "./router/AppRouter"
 import ThemeProvider from "./shared/theme/ThemeProvider"
 
 const App = () => {
 
     return (
-        <ThemeProvider>
-            <SnackbarProvider>
-                <div>App</div>
-            </SnackbarProvider>
-        </ThemeProvider>
+        <BrowserRouter>
+            <ThemeProvider>
+                <SnackbarProvider>
+                    <AppRouter />
+                </SnackbarProvider>
+            </ThemeProvider>
+        </BrowserRouter>
     )
 }
 
