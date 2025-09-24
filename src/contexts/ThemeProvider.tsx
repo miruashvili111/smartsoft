@@ -1,9 +1,11 @@
-import React, { useEffect, useState, type ReactNode } from 'react'
-import type { themeType } from '../../types/theme'
+import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { type ThemeContextType, type themeType } from '../types/theme'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
-import { darkTheme, lightTheme } from './theme'
+import { darkTheme, lightTheme } from '../shared/theme/theme'
 import CssBaseline from '@mui/material/CssBaseline'
  
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
 const ThemeProvider = ({ children } : { children: ReactNode }) => {
 
     const [theme, setTheme] = useState<themeType>('light') 
@@ -13,7 +15,7 @@ const ThemeProvider = ({ children } : { children: ReactNode }) => {
         if(savedTheme === 'light' || savedTheme === 'dark') {
             setTheme(savedTheme)
         }
-    })
+    }, [])
 
     const toggleTheme = () => {
         setTheme((prevTheme: themeType) => {
@@ -25,15 +27,21 @@ const ThemeProvider = ({ children } : { children: ReactNode }) => {
 
     
     return (
-        <MuiThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-            <CssBaseline />
-            <button onClick={toggleTheme}>
-                change Theme
-                {/* Test */}
-            </button>
-            {children}
-        </MuiThemeProvider>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            <MuiThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+                <CssBaseline />
+                {children}
+            </MuiThemeProvider>
+        </ThemeContext.Provider>
     )
+}
+
+export const useTheme = () => {
+    const context = useContext(ThemeContext)
+    if(!context) {
+        throw new Error('useTheme used inside ThemeProvider')
+    }
+    return context
 }
 
 export default ThemeProvider

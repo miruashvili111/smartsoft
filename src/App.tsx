@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom"
 import { SnackbarProvider } from "./contexts/useSnackbar"
 import AppRouter from "./router/AppRouter"
-import ThemeProvider from "./shared/theme/ThemeProvider"
+import ThemeProvider from "./contexts/ThemeProvider"
 import AuthProvider from "./features/auth/context/useAuth"
 
 const App = () => {

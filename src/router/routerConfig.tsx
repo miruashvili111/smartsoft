@@ -5,6 +5,7 @@ import AuthGuard from '../widgets/AuthGuard'
 
 const HomePage = lazy(() => import('../pages/HomePage'))
 const CaptionsPage = lazy(() => import('../pages/CaptionsPage'))
+const CountriesPage = lazy(() => import('../pages/CountriesPage'))
 const ErrorPage = lazy(() => import('../pages/ErrorPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 
@@ -23,6 +24,10 @@ export const routerConfig: RouteObject[] = [
             {
                 path: routerPaths['captions'],
                 element: <CaptionsPage />
+            },
+            {
+                path: routerPaths['countries'],
+                element: <CountriesPage />
             }
         ]
     },

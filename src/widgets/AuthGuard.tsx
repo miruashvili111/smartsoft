@@ -4,6 +4,7 @@ import { useAuth } from '../features/auth/context/useAuth'
 import { routerPaths } from '../config/routerPaths'
 import { AppRoutes } from '../config/AppRoutes'
 import Loading from './Loading'
+import DashboardLayouts from '../components/DashboardLayouts'
 
 const AuthGuard = () => {
 
@@ -24,7 +25,7 @@ const AuthGuard = () => {
     }
 
     return (
-        <Outlet />
+        <DashboardLayouts />
     )
 }
 

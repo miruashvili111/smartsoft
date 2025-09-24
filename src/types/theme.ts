@@ -1,3 +1,8 @@
 type themeType = 'light' | 'dark'
 
-export type { themeType }
+interface ThemeContextType {
+    theme: themeType
+    toggleTheme: () => void
+}
+
+export type { themeType, ThemeContextType }

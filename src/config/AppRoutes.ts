@@ -1,6 +1,7 @@
 export const AppRoutes = {
     HOME: 'home',
     CAPTIONS: 'captions',
+    COUNTRIES: 'countries',
     ERROR: 'error',
     NOT_FOUND: 'notFound'
 } as const;
