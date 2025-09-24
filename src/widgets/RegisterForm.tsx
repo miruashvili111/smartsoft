@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { Form, Formik } from 'formik'
-import { registerValidationSchema } from '../features/validation/authValidation'
+import { registerValidationSchema } from '../features/auth/validation/authValidation'
 import { Typography, TextField, InputAdornment, IconButton, Button } from '@mui/material'
 import { AccountCircle, Lock, Visibility, VisibilityOff } from '@mui/icons-material'
+import { useAuth } from '../features/auth/context/useAuth'
 
 const RegisterForm = () => {
+
+    const { register } = useAuth()
 
     const [passwordVsible, setPasswordVisible] = useState(false)
 
@@ -14,8 +17,8 @@ const RegisterForm = () => {
         <Formik
             initialValues={{ username: '', password: '', confirmPassword: '' }}
             validationSchema={registerValidationSchema}
-            onSubmit={( values, { setSubmitting } ) => {
-                console.log(values)
+            onSubmit={async ( values, { setSubmitting } ) => {
+                await register(values)
                 setSubmitting(false)
             }}
         >
@@ -29,7 +32,7 @@ const RegisterForm = () => {
             }) => (
                 <Form>
                     <Typography variant='h5' align='center' gutterBottom color='primary'>
-                        Create Account
+                        Create Account 
                     </Typography>
                     <TextField 
                         name='username'
@@ -105,7 +108,7 @@ const RegisterForm = () => {
                         variant='contained'
                         color='primary'
                         fullWidth
-                        disabled={isSubmitting}
+                        loading={isSubmitting}
                         sx={{
                             py: 2,
                             mt: 2

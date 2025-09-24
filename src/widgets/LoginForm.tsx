@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { Form, Formik } from 'formik'
-import { loginValidationSchema } from '../features/validation/authValidation'
+import { loginValidationSchema } from '../features/auth/validation/authValidation'
 import { Typography, TextField, InputAdornment, IconButton, Button } from '@mui/material'
 import { AccountCircle, Lock, Visibility, VisibilityOff } from '@mui/icons-material'
+import { useAuth } from '../features/auth/context/useAuth'
 
 const LoginForm = () => {
+
+    const { login } = useAuth()
 
     const [passwordVsible, setPasswordVisible] = useState(false)
 
@@ -14,8 +17,8 @@ const LoginForm = () => {
         <Formik
             initialValues={{ username: '', password: '' }}
             validationSchema={loginValidationSchema}
-            onSubmit={(values, { setSubmitting }) => {
-                console.log(values)
+            onSubmit={async (values, { setSubmitting }) => {
+                await login(values)
                 setSubmitting(false)
             }}
         >
@@ -86,7 +89,7 @@ const LoginForm = () => {
                         variant='contained'
                         color='primary'
                         fullWidth
-                        disabled={isSubmitting}
+                        loading={isSubmitting}
                         sx={{
                             py: 2,
                             mt: 2

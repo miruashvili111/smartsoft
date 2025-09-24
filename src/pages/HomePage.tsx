@@ -1,15 +1,28 @@
-import React, { useState, type SyntheticEvent } from 'react'
+import React, { useEffect, useState, type SyntheticEvent } from 'react'
 import { Box, Tabs, Tab, Card, CardContent } from '@mui/material'
 import LoginForm from '../widgets/LoginForm'
 import RegisterForm from '../widgets/RegisterForm'
+import { useNavigate } from 'react-router-dom'
+import { routerPaths } from '../config/routerPaths'
+import { AppRoutes } from '../config/AppRoutes'
+import { useAuth } from '../features/auth/context/useAuth'
 
 const HomePage = () => {
 
+    const navigate = useNavigate()
+
+    const { token, user } = useAuth()
     const [tabValue, setTabValue] = useState(0)
 
     const handleTabChange = (_: SyntheticEvent, value: number) => {
         setTabValue(value)
     }
+
+    useEffect(() => {
+        if(token && user) {
+            navigate(routerPaths[AppRoutes.CAPTIONS], { replace: true })
+        }
+    }, [token, user])
 
     return (
         <Box
