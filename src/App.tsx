@@ -1,7 +1,10 @@
+import ThemeProvider from "./shared/theme/ThemeProvider"
 
 const App = () => {
     return (
-        <div>App</div>
+        <ThemeProvider>
+            <div>App</div>
+        </ThemeProvider>
     )
 }
 
