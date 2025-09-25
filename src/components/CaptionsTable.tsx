@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Caption, CaptionsTableProps } from '../types/caption'
 import { IconButton, LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import { Delete, Edit, Favorite, ThumbDown } from '@mui/icons-material'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type SyntheticEvent } from 'react'
+import { useEffect, useState, type SyntheticEvent } from 'react'
 import { Box, Tabs, Tab, Card, CardContent } from '@mui/material'
 import LoginForm from '../widgets/LoginForm'
 import RegisterForm from '../widgets/RegisterForm'

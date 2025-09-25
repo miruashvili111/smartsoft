@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { type ThemeContextType, type themeType } from '../types/theme'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { darkTheme, lightTheme } from '../shared/theme/theme'

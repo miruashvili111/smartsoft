@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAuth } from '../contexts/useAuth'
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import { DarkMode, LightMode, Menu } from '@mui/icons-material'

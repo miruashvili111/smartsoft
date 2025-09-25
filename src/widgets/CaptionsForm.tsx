@@ -1,5 +1,4 @@
 import { Form, Formik } from 'formik'
-import React from 'react'
 import { captionValidationSchema } from '../features/captions/validation/captionValidation'
 import { Box, Button, Grid, InputAdornment, TextField } from '@mui/material'
 import { captionsService } from '../features/captions/services/caption.service'
