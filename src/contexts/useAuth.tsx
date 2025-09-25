@@ -1,11 +1,12 @@
 import { createContext, useCallback, useContext, useState, type ReactNode } from "react"
-import type { AuthContextType, AuthResponse, LoginPayload } from "../../../types/auth"
-import type { User, RegistrationValues } from "../../../types/user"
+import type { AuthContextType, AuthResponse, LoginPayload } from "../types/auth"
+import type { RegistrationValues, User } from "../types/user"
 import { useNavigate } from "react-router-dom"
-import { useSnackbar } from "../../../contexts/useSnackbar"
-import { routerPaths } from "../../../config/routerPaths"
-import { AppRoutes } from "../../../config/AppRoutes"
-import { authService } from "../services/auth.service"
+import { useSnackbar } from "./useSnackbar"
+import { routerPaths } from "../config/routerPaths"
+import { AppRoutes } from "../config/AppRoutes"
+import { authService } from "../features/auth/services/auth.service"
+
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 

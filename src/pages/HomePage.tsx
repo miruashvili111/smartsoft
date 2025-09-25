@@ -5,7 +5,7 @@ import RegisterForm from '../widgets/RegisterForm'
 import { useNavigate } from 'react-router-dom'
 import { routerPaths } from '../config/routerPaths'
 import { AppRoutes } from '../config/AppRoutes'
-import { useAuth } from '../features/auth/context/useAuth'
+import { useAuth } from '../contexts/useAuth'
 
 const HomePage = () => {
 

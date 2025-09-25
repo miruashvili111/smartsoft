@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik'
 import { registerValidationSchema } from '../features/auth/validation/authValidation'
 import { Typography, TextField, InputAdornment, IconButton, Button } from '@mui/material'
 import { AccountCircle, Lock, Visibility, VisibilityOff } from '@mui/icons-material'
-import { useAuth } from '../features/auth/context/useAuth'
+import { useAuth } from '../contexts/useAuth'
 
 const RegisterForm = () => {
 

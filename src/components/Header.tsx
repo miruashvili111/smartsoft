@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../features/auth/context/useAuth'
+import { useAuth } from '../contexts/useAuth'
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import { DarkMode, LightMode, Menu } from '@mui/icons-material'
 import { useTheme } from '../contexts/ThemeProvider'

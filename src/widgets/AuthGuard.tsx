@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../features/auth/context/useAuth'
 import { routerPaths } from '../config/routerPaths'
 import { AppRoutes } from '../config/AppRoutes'
 import Loading from './Loading'
 import DashboardLayouts from '../components/DashboardLayouts'
+import { useAuth } from '../contexts/useAuth'
 
 const AuthGuard = () => {
 
