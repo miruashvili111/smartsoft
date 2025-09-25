@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../features/auth/context/useAuth'
 import { routerPaths } from '../config/routerPaths'
 import { AppRoutes } from '../config/AppRoutes'
