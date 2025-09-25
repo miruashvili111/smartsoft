@@ -1,5 +1,5 @@
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, InputAdornment, TextField } from '@mui/material'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Form, Formik, type FormikProps } from 'formik'
 import { captionValidationSchema } from '../features/captions/validation/captionValidation'
 import { useSnackbar } from '../contexts/useSnackbar'

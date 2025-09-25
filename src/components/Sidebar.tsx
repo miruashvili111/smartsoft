@@ -1,6 +1,5 @@
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Subtitles, Public } from '@mui/icons-material'
 

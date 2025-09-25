@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { captionsService } from '../features/captions/services/caption.service'
 import { type Caption } from '../types/caption'
 import { useSnackbar } from '../contexts/useSnackbar'

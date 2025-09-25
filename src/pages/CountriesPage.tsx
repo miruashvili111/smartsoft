@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, type ChangeEvent } from 'react'
+import { useEffect, useMemo, useState, type ChangeEvent } from 'react'
 import type { Country, TableColumn, TableData } from '../types/countries'
 import { countriesService } from '../features/countries/services/countries.service'
 import { Box, Checkbox, Grid, LinearProgress, MenuItem, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TextField, Typography } from '@mui/material'
@@ -47,6 +47,7 @@ const CountriesPage = () => {
             showSnackbar('Faild get contries', 'error')
             setCountries([])
             setLoading(false)
+            console.log(error)
         })
     }, [contriesMemo])
 
