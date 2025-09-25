@@ -7,7 +7,7 @@ const CaptionsTable = ({ captionsData, loading, onDelete, onEdit } : CaptionsTab
 
     return (
         <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto', marginTop: 5 }}>
-            <Table aria-label='captions table'>
+            <Table aria-label='captions-table'>
                 <TableHead>
                     <TableRow>
                         <TableCell>
