@@ -8,6 +8,8 @@ const Header = ({ open } : { open: () => void }) => {
     const { user, logout } = useAuth()
     const { theme, toggleTheme } = useTheme()
  
+    console.log('Check')
+
     return (
         <AppBar
             position='fixed'
